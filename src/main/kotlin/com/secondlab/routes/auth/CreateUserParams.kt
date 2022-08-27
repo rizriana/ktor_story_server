@@ -1,4 +1,4 @@
-package com.secondlab.data.service
+package com.secondlab.routes.auth
 
 data class CreateUserParams(
     val fullName: String,

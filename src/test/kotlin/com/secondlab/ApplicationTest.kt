@@ -1,4 +1,3 @@
 package com.secondlab
 
-class ApplicationTest {
-}
+class ApplicationTest

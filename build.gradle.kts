@@ -39,4 +39,5 @@ dependencies {
     implementation("org.postgresql:postgresql:42.4.2")
     implementation("com.zaxxer:HikariCP:4.0.3")
     implementation("io.ktor:ktor-server-content-negotiation:$ktor_version")
+    implementation("io.ktor:ktor-server-status-pages:$ktor_version")
 }

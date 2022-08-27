@@ -1,5 +1,6 @@
 package com.secondlab.data.db
 
+import com.secondlab.data.db.schemas.UserTable
 import com.zaxxer.hikari.HikariConfig
 import com.zaxxer.hikari.HikariDataSource
 import kotlinx.coroutines.Dispatchers
