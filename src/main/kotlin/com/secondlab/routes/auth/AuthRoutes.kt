@@ -1,8 +1,6 @@
 package com.secondlab.routes.auth
 
 import com.secondlab.data.repository.auth.AuthRepository
-import com.secondlab.routes.auth.CreateUserParams
-import com.secondlab.routes.auth.UserLoginParams
 import io.ktor.server.application.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*

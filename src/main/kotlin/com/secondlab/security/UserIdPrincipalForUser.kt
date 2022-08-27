@@ -2,6 +2,6 @@ package com.secondlab.security
 
 import io.ktor.server.auth.*
 
-data class UserIdPrincipleForUser(
+data class UserIdPrincipalForUser(
     val id: Int
 ): Principal

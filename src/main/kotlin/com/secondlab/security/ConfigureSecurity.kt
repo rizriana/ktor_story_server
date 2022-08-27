@@ -15,7 +15,7 @@ fun Application.configureSecurity() {
             validate {
                 val claim = it.payload.getClaim(JwtConfig.CLAIM).asInt()
                 if (claim != null) {
-                    UserIdPrincipleForUser(claim)
+                    UserIdPrincipalForUser(claim)
                 } else {
                     null
                 }
