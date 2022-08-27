@@ -1,0 +1,1 @@
+rootProject.name = "com.secondlab.ktor-story-server"
