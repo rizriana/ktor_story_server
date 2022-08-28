@@ -12,15 +12,15 @@ class AuthRepositoryImpl(
 ) : AuthRepository {
     override suspend fun registerUser(params: CreateUserParams): BaseResponse<Any> {
         return if (isEmailExist(params.email)) {
-            BaseResponse.ErrorResponse(message = MESSAGE_EMAIL_ALREADY_REGISTERED)
+            BaseResponse.ErrorResponse(success = false, message = MESSAGE_EMAIL_ALREADY_REGISTERED)
         } else {
             val user = authService.registerUser(params)
             if (user != null) {
                 val token = JwtConfig.instance.createAccessToken(user.id)
                 user.authToken = token
-                BaseResponse.SuccessResponse(data = user, message = USER_REGISTRATION_SUCCESS)
+                BaseResponse.SuccessResponse(success = true, data = user, message = USER_REGISTRATION_SUCCESS)
             } else {
-                BaseResponse.ErrorResponse(GENERIC_ERROR)
+                BaseResponse.ErrorResponse(success = false, GENERIC_ERROR)
             }
         }
     }
@@ -30,9 +30,9 @@ class AuthRepositoryImpl(
         return if (user != null) {
             val token = JwtConfig.instance.createAccessToken(user.id)
             user.authToken = token
-            BaseResponse.SuccessResponse(data = user, message = USER_LOGIN_SUCCESS)
+            BaseResponse.SuccessResponse(success = true, data = user, message = USER_LOGIN_SUCCESS)
         } else {
-            BaseResponse.ErrorResponse(USER_LOGIN_FAILURE)
+            BaseResponse.ErrorResponse(success = false, USER_LOGIN_FAILURE)
         }
     }
 

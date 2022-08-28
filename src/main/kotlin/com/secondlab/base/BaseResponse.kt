@@ -12,6 +12,7 @@ sealed class BaseResponse<T>(
 ) {
     @JsonSerialize
     data class SuccessResponse<T>(
+        val success: T,
         val data: T? = null,
         val message: String? = null,
         @JsonIgnore override val statusCode: HttpStatusCode = HttpStatusCode.OK
@@ -19,6 +20,7 @@ sealed class BaseResponse<T>(
 
     @JsonSerialize
     data class ErrorResponse<T>(
+        val success: T,
         val data: T? = null,
         val message: String? = null,
         @JsonIgnore

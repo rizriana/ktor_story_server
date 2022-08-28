@@ -7,6 +7,6 @@ class UserRepositoryImpl(
     private val userService: UserService
 ) : UserRepository {
     override suspend fun getUser(id: Int): BaseResponse<Any> {
-        return BaseResponse.SuccessResponse(data = userService.getUser(id))
+        return BaseResponse.SuccessResponse(success = true, data = userService.getUser(id))
     }
 }
